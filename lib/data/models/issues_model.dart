@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter_media_markt/data/models/user_model.dart';
 
-class IssuesModel {
+class IssuesModel extends Equatable {
   final String url;
   final String repositoryUrl;
   final String labelsUrl;
@@ -71,4 +72,27 @@ class IssuesModel {
       body: json['body'],
     );
   }
+
+  @override
+  List<Object> get props => [
+        this.url,
+        this.repositoryUrl,
+        this.labelsUrl,
+        this.commentsUrl,
+        this.eventsUrl,
+        this.htmlUrl,
+        this.id,
+        this.nodeId,
+        this.number,
+        this.title,
+        this.user,
+        this.state,
+        this.locked,
+        this.comments,
+        this.createdAt,
+        this.updatedAt,
+        this.closedAt,
+        this.authorAssociation,
+        this.body,
+      ];
 }
